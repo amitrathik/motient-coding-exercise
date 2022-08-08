@@ -1,21 +1,17 @@
-import React from 'react';
 
-import CreditCardChip from '../CreditCardChip';
-import CreditCardBrand from '../CreditCardBrand';
-import CreditCardNumber from '../CreditCardNumber';
-import CreditCardHolderName from '../CreditCardHolderName';
-import CreditCardExpirationDate from '../CreditCardExpirationDate';
-
-class CreditCardPreview extends React.Component{
-	render(){
-		return <div className="CreditCardPreview">
-			<CreditCardChip/>
-			<CreditCardBrand />
-			<CreditCardNumber />
-			<CreditCardHolderName />
-			<CreditCardExpirationDate />
-      </div>
-	}
+const CreditCardPreview = ({cardNumber}) => {
+	return <div className="CreditCardPreview">
+		<span className="CreditCardChip"></span>
+		<span class="CreditCardBrand"></span>
+		<span class="CreditCardNumber">{cardNumber}</span>
+		<div class="CreditCardHolderName">
+			<p>Card Holder Name</p>
+			<p></p>
+        </div>
+		<div class="CreditCardExpirationDate">
+			<p>Expires</p>
+			<p></p>
+		</div>
+	</div>
 }
-
 export default CreditCardPreview
