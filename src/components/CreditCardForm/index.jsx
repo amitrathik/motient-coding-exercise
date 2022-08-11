@@ -1,5 +1,5 @@
 
-const CreditCardForm = ({handleCreditCardNumber, cardNumber}) => {
+const CreditCardForm = ({handleCreditCardNumber, handleCreditCardHolderName, handleCreditCardExpirationMonth, handleCreditCardExpirationYear, cardNumber, cardHolderName, cardExpirationMonth,cardExpirationYear}) => {
   return <form className="CreditCardForm">
     <div className="field">
       <label>Card Number</label>
@@ -7,17 +7,32 @@ const CreditCardForm = ({handleCreditCardNumber, cardNumber}) => {
         type="text" 
         name="creditCardNumber" 
         id="creditCardNumber"  
-        onChange={(evt) => {handleCreditCardNumber(evt)}} value={cardNumber} />
+        onChange={(evt) => {handleCreditCardNumber(evt)}} 
+        value={cardNumber} 
+      />
     </div>
 
     <div className="field">
       <label>Card Holder Name</label>
-      <input type="text" name="creditCardHolderName" id="creditCardHolderName"/>
+      <input 
+        type="text" 
+        name="creditCardHolderName" 
+        id="creditCardHolderName"
+        onChange={(evt) => {handleCreditCardHolderName(evt)}} 
+        value={cardHolderName} 
+      />
     </div>
 
     <div className="field">
       <label>Expiration Date</label>
-      <select type="select" name="expirationMonth" id="expirationMonth">
+      <select 
+        type="select" 
+        name="expirationMonth" 
+        id="expirationMonth"
+        value={cardExpirationMonth}
+        onChange={(evt) => {handleCreditCardExpirationMonth(evt)}}  
+      >
+        <option value="MM">MM</option>
         <option value="01">01</option>
         <option value="02">02</option>
         <option value="03">03</option>
@@ -31,11 +46,18 @@ const CreditCardForm = ({handleCreditCardNumber, cardNumber}) => {
         <option value="11">11</option>
         <option value="12">12</option>
       </select>
-      <select type="select" name="expirationYear" id="expirationYear">
-        <option value="2022">2022</option>
-        <option value="2023">2023</option>
-        <option value="2024">2024</option>
-        <option value="2025">2025</option>
+      <select 
+        type="select" 
+        name="expirationYear" 
+        id="expirationYear"
+        value={cardExpirationYear}
+        onChange={(evt) => {handleCreditCardExpirationYear(evt)}}  
+      >
+        <option value="YY">YY</option>
+        <option value="2022">22</option>
+        <option value="2023">23</option>
+        <option value="2024">24</option>
+        <option value="2025">25</option>
       </select>
     </div>
 

@@ -12,10 +12,8 @@ class App extends React.Component {
     this.state = {
         cardNumber : '',
         cardHolderName : '',
-        cardExpirationDate : {
-          month : '',
-          year : ''
-        }
+        cardExpirationMonth : 'MM',
+        cardExpirationYear : 'YY'
     }
   }
 
@@ -33,16 +31,42 @@ class App extends React.Component {
     }
   }
 
+  handleCreditCardHolderName = (evt) => {
+    this.setState({
+      cardHolderName : evt.target.value
+    })
+  }
+
+  handleCreditCardExpirationMonth = (evt) => {
+    this.setState({
+      cardExpirationMonth : evt.target.value
+    })
+  }
+
+  handleCreditCardExpirationYear = (evt) => {
+    this.setState({
+      cardExpirationYear : evt.target.value
+    })
+  }
 
   render () {
     return (
       <div className="App">
         <CreditCardPreview
            cardNumber = {this.state.cardNumber}
+           cardHolderName = {this.state.cardHolderName}
+           cardExpirationMonth = {this.state.cardExpirationMonth}
+           cardExpirationYear = {this.state.cardExpirationYear}
         />
         <CreditCardForm 
           handleCreditCardNumber = {this.handleCreditCardNumber}
+          handleCreditCardHolderName = {this.handleCreditCardHolderName}
+          handleCreditCardExpirationMonth = {this.handleCreditCardExpirationMonth}
+          handleCreditCardExpirationYear = {this.handleCreditCardExpirationYear}
           cardNumber = {this.state.cardNumber}
+          cartHolderName={this.state.cardHolderName}
+          cardExpirationMonth = {this.state.cardExpirationMonth}
+          cardExpirationYear = {this.state.cardExpirationYear}
         />
       </div>
     );

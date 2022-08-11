@@ -1,16 +1,16 @@
 
-const CreditCardPreview = ({cardNumber}) => {
+const CreditCardPreview = ({cardNumber, cardHolderName, cardExpirationMonth, cardExpirationYear}) => {
 	return <div className="CreditCardPreview">
 		<span className="CreditCardChip"></span>
-		<span class="CreditCardBrand"></span>
-		<span class="CreditCardNumber">{cardNumber}</span>
-		<div class="CreditCardHolderName">
+		<span className="CreditCardBrand"></span>
+		<span className="CreditCardNumber">{cardNumber !== "" ? cardNumber : '#### #### #### ####'}</span>
+		<div className="CreditCardHolderName">
 			<p>Card Holder Name</p>
-			<p></p>
+			<p>{cardHolderName}</p>
         </div>
-		<div class="CreditCardExpirationDate">
+		<div className="CreditCardExpirationDate">
 			<p>Expires</p>
-			<p></p>
+			<p>{cardExpirationMonth}/{cardExpirationYear}</p>
 		</div>
 	</div>
 }
