@@ -48,16 +48,3 @@ Since I had an outdated dev environment for React, I decided to bootstrap the pr
 		- Card Expiration Date
 			- a box with white border displaying date : expires mm/yy
 
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-

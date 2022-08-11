@@ -1,6 +1,6 @@
 
-const CreditCardForm = ({handleCreditCardNumber, handleCreditCardHolderName, handleCreditCardExpirationMonth, handleCreditCardExpirationYear, cardNumber, cardHolderName, cardExpirationMonth,cardExpirationYear}) => {
-  return <form className="CreditCardForm">
+const CreditCardForm = ({handleCreditCardNumber, handleCreditCardHolderName, handleCreditCardExpirationMonth, handleCreditCardExpirationYear, handleSubmit, cardNumber, cardHolderName, cardExpirationMonth,cardExpirationYear}) => {
+  return <form className="CreditCardForm" onSubmit={handleSubmit}>
     <div className="field">
       <label>Card Number</label>
       <input 
@@ -67,7 +67,7 @@ const CreditCardForm = ({handleCreditCardNumber, handleCreditCardHolderName, han
       <input type="text" name="creditCardCVV" id="creditCardCVV"/>
     </div>
 
-    <button type="submit">Submit</button>
+    <button type="submit" >Submit</button>
     
   </form>
 }

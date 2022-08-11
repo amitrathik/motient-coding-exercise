@@ -49,6 +49,11 @@ class App extends React.Component {
     })
   }
 
+  handleSubmit(e){
+    e.preventDefault();
+    console.log("form submitted")
+  }
+
   render () {
     return (
       <div className="App">
@@ -63,6 +68,7 @@ class App extends React.Component {
           handleCreditCardHolderName = {this.handleCreditCardHolderName}
           handleCreditCardExpirationMonth = {this.handleCreditCardExpirationMonth}
           handleCreditCardExpirationYear = {this.handleCreditCardExpirationYear}
+          handleSubmit = {this.handleSubmit}
           cardNumber = {this.state.cardNumber}
           cartHolderName={this.state.cardHolderName}
           cardExpirationMonth = {this.state.cardExpirationMonth}
