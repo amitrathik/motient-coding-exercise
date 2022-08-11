@@ -74,6 +74,7 @@ button{
 }
 
 .CreditCardBrand {
+  position : absolute;
   background-image:url('./images/visa.png');
   width : 60px;
   height : 50px;
@@ -81,8 +82,8 @@ button{
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  right:0;
-  top:0;
+  right: 20px;
+  top: 20px;
 }
 
 .CreditCardNumber{
@@ -93,12 +94,12 @@ button{
 
 .CreditCardHolderName{
   position : absolute;
-  bottom : 0;
-  left : 0;
+  bottom: 10px;
+  left: 20px;
 }
 
 .CreditCardExpirationDate{
   position: absolute;
-  bottom : 0;
-  right : 0;
+  bottom: 5px;
+  right: 20px;
 }
