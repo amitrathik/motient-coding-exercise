@@ -18,15 +18,18 @@ class App extends React.Component {
   }
 
   onlyNumbers = (evt) => {
-    console.log(/^[0-9]+$/.test(evt.target.value));
-    return /^[0-9]+$/.test(evt.target.value)
+    return /^[0-9]*$/.test(evt.target.value)
+  }
+
+  formatCreditCardNumber = (cardNumber) => {
+    // TODO: take card number string, format it to - #### #### #### ####
+    return cardNumber.match(/.{1,4}/g) || []
   }
 
   handleCreditCardNumber = (evt) => {
-    if(this.onlyNumbers(evt)){
-      console.log("only numbers entered")
+    if(this.onlyNumbers(evt) && evt.target.value.length <= 16){
       this.setState({
-        cardNumber : evt.target.value
+        cardNumber : this.formatCreditCardNumber(evt.target.value)
       })
     }
   }
@@ -51,7 +54,7 @@ class App extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    console.log("form submitted")
+    
   }
 
   render () {
